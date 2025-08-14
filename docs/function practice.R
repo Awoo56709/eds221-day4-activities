@@ -165,7 +165,7 @@ for (j in seq_along(r_seq)){
 }
 # to view view(out_matrix)
 
-# data wranggling to plot
+# data wrangling to plot
 
 #adding time as a variable
 out_df <- data.frame(out_matrix, time = time_vec)
@@ -176,11 +176,14 @@ colnames(out_df) <- c(paste0("gr_", r_seq),"time")
 #pivot longer to make it tidy
 out_df_long <- out_df %>% 
   pivot_longer(cols = -time, 
-                names_to = "growth_rate,",
+                names_to = "growth_rate",
                 values_to = "population")
 
 #plot it
-ggplot(data = out_df_long, aes(x = time, y = population)) + geom_line(aes(color = growth_rate)) + theme_minimal()
+ggplot(data = out_df_long,
+       aes(x = time, y = population)) + 
+  geom_line(aes(color = growth_rate)) + 
+  theme_minimal()
 
 
 
