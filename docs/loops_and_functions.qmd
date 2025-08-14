@@ -1,0 +1,63 @@
+---
+title: "loops_and_functions.qmd"
+format: html
+editor: visual
+---
+#Create two sequences, one called weekdays that contains days of the week (“Monday”, “Tuesday”, “Wednesday”, etc.) and one called transects that contains the series of transect names “Transect A”, “Transect B,”Transect C”. Write a nested for loop that creates a matrix containing the following:
+
+```{r}
+weekday_prefix <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
+
+transact_suffix <- c("Transect A","Transect B","Transect C")
+
+#nested for loop
+
+# first printing names
+
+for (i in seq_along(weekday_prefix)) {
+  for (j in seq_along(transact_suffix)) {
+    print(paste0(weekday_prefix[i],"-",transact_suffix[j]))
+  }
+}
+```
+#Task 2
+Write a function called force that calculates a force (in Newtons), given inputs of mass (in kg) and acceleration (in 
+ 
+ (recall: 
+), and returns a statement “The resulting force is ___ Newtons.”
+
+```{r}
+
+force <- function(m,a) {
+  newt_force = m * a
+  #return(newt_force)
+  print(paste("The resulting force is",newt_force,"Newtons"))
+}
+  
+force(m = 2, a = 5)
+```
+# Task 3
+The length:weight relationship for fish is: 
+, where where L is total fish length (centimeters), W is the expected fish weight (grams), and a and b are species-dependent parameter values (shown below for several fish from Peyton et al. 2016).
+
+```{r}
+Fish_type = c("Milkfish", "Great_B")
+Milkfish = c(0.0905,2.52)
+Great_barracuda = c(0.0181, 3.27)
+Giant_trevally = c(0.0353, 3.05)
+
+leng_weight_r_fish <- function(a * l^b) {
+  if ()
+}
+```
+
+
+
+
+
+
+
+
+
+
+
